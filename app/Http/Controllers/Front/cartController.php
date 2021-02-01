@@ -121,15 +121,29 @@ class cartController extends Controller
 
     public function checkoutCart()
     {
-
+        if(Auth::check() != null)
+        {
             $data = DB::table('baskets')
                 ->select('baskets.productID', 'baskets.numberOfProducts', 'products.name', 'products.permalink' ,'products.metaDescription', 'products.price', 'product_images.path')
                 ->join('products','products.id','=','baskets.productID')
                 ->join('product_images','product_images.productID','=','baskets.productID')
                 ->groupBy('baskets.productID')
                 ->where('userID','=',Auth::id())
-                ->orWhere('token','=',session('basket'))
                 ->get();
+        }
+        else
+        {
+            $data = DB::table('baskets')
+                ->select('baskets.productID', 'baskets.numberOfProducts', 'products.name', 'products.permalink' ,'products.metaDescription', 'products.price', 'product_images.path')
+                ->join('products','products.id','=','baskets.productID')
+                ->join('product_images','product_images.productID','=','baskets.productID')
+                ->groupBy('baskets.productID')
+                ->where('token','=',session('basket'))
+                ->get();
+        }
+
+
+
 
             $payment = cartHelper::getCartTotal($data);
 

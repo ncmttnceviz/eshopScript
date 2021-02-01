@@ -60,7 +60,7 @@
 
                     </div>
                     <div class="sinlge-bar shopping">
-                        <a href="{{route('front.cart')}}" class="single-icon"><i class="ti-bag"></i> <span class="total-count">{{\App\Helper\cartHelper::countCart()}}</span></a>
+                        <a href="{{route('front.cart')}}" class="single-icon"><i class="ti-bag"></i> <span class="total-count">{{}}  {{\App\Helper\cartHelper::countCart()}}</span></a>
                     </div>
                 </div>
             </div>

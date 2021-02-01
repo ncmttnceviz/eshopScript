@@ -19,10 +19,16 @@ class cartHelper
 
     static function countCart()
     {
-        $count = Basket::where('userID','=',Auth::id())
-            ->orWhere('token','=',session('basket'))
-            ->count();
-
+        if (Auth::check() != null)
+        {
+            $count = Basket::where('userID','=',Auth::id())
+                ->count();
+        }
+        else
+        {
+            $count = Basket::where('token','=',session('basket'))
+                ->count();
+        }
         return $count;
     }
 

@@ -4,6 +4,7 @@ namespace App\Http;
 
 use App\Http\Middleware\basketController;
 use App\Http\Middleware\userController;
+use App\Http\Middleware\siteController;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -67,5 +68,6 @@ class Kernel extends HttpKernel
         'aktivation' =>\App\Http\Middleware\userController::class,
         'basket' =>\App\Http\Middleware\basketController::class,
         "account" => \App\Http\Middleware\accountController::class,
+        "demo" => \App\Http\Middleware\siteController::class,
     ];
 }
