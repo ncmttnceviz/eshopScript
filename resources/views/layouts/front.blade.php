@@ -108,7 +108,7 @@
                                             <li><a href="{{route('front.category',['permalink'=>$value['permalink']])}}">{{$value['name']}}</a></li>
                                                 @php } @endphp
                                             @endforeach
-                                            <li> <a href="{{route('front.cart')}}" >{{__('Cart')}}</a></li>
+                                            <li><a href="{{route('front.cart')}}">{{__('Cart')}}</a></li>
                                         </ul>
                                     </div>
                                 </div>

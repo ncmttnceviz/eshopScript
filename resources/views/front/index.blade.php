@@ -176,12 +176,12 @@
                         @foreach($hot as $key => $value)
                         <div class="single-product">
                             <div class="product-img">
-                                <a href="{{route('front.product',['permalink'=>$value->permalink])}}">
+                                <a href="{{$value->permalink}}">
                                     <img class="default-img" src="{{asset($value->path)}}" alt="#">
                                 </a>
                             </div>
                             <div class="product-content">
-                                <h3><a href="{{route('front.product',['permalink'=>$value->permalink])}}">{{$value->name}}</a></h3>
+                                <h3><a href="{{$value->permalink}}">{{$value->permalink}}</a></h3>
                                 <div class="product-price">
                                     <span>{{$value->price}}</span>
                                 </div>

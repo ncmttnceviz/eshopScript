@@ -121,27 +121,27 @@ class cartController extends Controller
 
     public function checkoutCart()
     {
-        if(Auth::check() != null)
+
+        if (Auth::user() != null)
         {
             $data = DB::table('baskets')
-                ->select('baskets.productID', 'baskets.numberOfProducts', 'products.name', 'products.permalink' ,'products.metaDescription', 'products.price', 'product_images.path')
+                ->select('baskets.userID','baskets.productID', 'baskets.numberOfProducts', 'products.name', 'products.permalink' ,'products.metaDescription', 'products.price', 'product_images.path')
                 ->join('products','products.id','=','baskets.productID')
                 ->join('product_images','product_images.productID','=','baskets.productID')
                 ->groupBy('baskets.productID')
-                ->where('userID','=',Auth::id())
+                ->where('baskets.userID','=',Auth::id())
                 ->get();
         }
         else
         {
             $data = DB::table('baskets')
-                ->select('baskets.productID', 'baskets.numberOfProducts', 'products.name', 'products.permalink' ,'products.metaDescription', 'products.price', 'product_images.path')
+                ->select('baskets.token','baskets.productID', 'baskets.numberOfProducts', 'products.name', 'products.permalink' ,'products.metaDescription', 'products.price', 'product_images.path')
                 ->join('products','products.id','=','baskets.productID')
                 ->join('product_images','product_images.productID','=','baskets.productID')
                 ->groupBy('baskets.productID')
-                ->where('token','=',session('basket'))
+                ->where('baskets.token',session('basket'))
                 ->get();
         }
-
 
 
 

@@ -27,7 +27,7 @@ class notificationHelper
 
         $error = [
             "status" => "alert alert-danger",
-            "message" => self::$$message
+            "message" => self::$error
         ];
 
         if ($type == 'success')

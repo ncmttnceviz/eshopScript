@@ -58,7 +58,6 @@ class indexController extends Controller
             ->groupBy('products.id')
             ->where('products.status','=',1)
             ->where('products.publish','=',1)
-            ->inRandomOrder()
             ->get();
 
         $hotitems  =  DB::table('products')
@@ -67,7 +66,6 @@ class indexController extends Controller
             ->groupBy('products.id')
             ->where('status' ,'=',2)
             ->where('products.publish','=',1)
-            ->inRandomOrder()
             ->get();
 
 

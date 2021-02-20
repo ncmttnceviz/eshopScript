@@ -29,15 +29,11 @@ class indexController extends Controller
         $all = $request->except('_token');
         $all["permalink"] = funcHelper::permalink($request["name"]);
         $type = $all['type'];
+        $control = Categories::where('permalink','=',$all['permalink'])->count();
 
-        if($type == 0)
+
+        if ($type == 0 and $control == 0)
         {
-            $control = Categories::where('permalink','=',$all['permalink'])
-                ->where('type','=',$type)
-                ->count();
-
-            if ($control == 0)
-            {
                 $insert = Categories::create($all);
                 if ($insert)
                 {
@@ -47,24 +43,34 @@ class indexController extends Controller
                 {
                     return notificationHelper::sendNotification('error');
                 }
-            }
-            else
-            {
-                return notificationHelper::sendNotification('error','saveddata');
-            }
 
         }
-        else if ($type == 1)
+        else if ($type == 0 and  $control >0)
         {
-            $getMainCategory = Categories::select('permalink')
-                ->where('id','=',$all['mainCategoryID'])
-                ->get();
-            $newperma = $getMainCategory[0]['permalink'].'-'.funcHelper::permalink($all['permalink']);
 
-            $control = Categories::where('permalink','=',$newperma)->count();
-            if ($control == 0)
+            return notificationHelper::sendNotification('error','saveddata');
+        }
+        else if ($type == 1 and $control == 0)
+        {
+            $insert = Categories::create($all);
+            if ($insert)
             {
-                $all['permalink'] = $newperma;
+                return notificationHelper::sendNotification('success','create');
+            }
+            else
+            {
+                return notificationHelper::sendNotification('error');
+            }
+        }
+        else if ($type == 1 and $control >0)
+        {
+            $mainCategory = Categories::select('permalink')->where('id','=',$all['mainCategoryID'])->get();
+            $newlink = $mainCategory[0]['permalink'].'-'.$all['permalink'];
+            $newcontrol = Categories::where('permalink','=',$newlink)->count();
+
+            if ($newcontrol == 0)
+            {
+                $all['permalink'] = $newlink;
                 $insert = Categories::create($all);
                 if ($insert)
                 {
@@ -76,11 +82,10 @@ class indexController extends Controller
                 }
             }
             else
-            {
+                {
                     return notificationHelper::sendNotification('error','saveddata');
-            }
+                }
         }
-
 
     }
 

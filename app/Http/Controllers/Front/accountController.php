@@ -159,9 +159,9 @@ class accountController extends Controller
             $data = DB::table('orders')
                 ->select('products.id','products.name','products.metaTitle','products.metaDescription','products.permalink',
                     'orders.productID','orders.numberOfProducts','orders.price','orders.totalPrice','orders.status', 'orders.shippingTrackingNumber',
-                'product_images.path','product_images.productID')
+                'product_images.path')
                 ->join('products','products.id','=','orders.productId')
-                ->join('product_images','product_images.productID','=','orders.productID')
+                ->join('product_images','product_Images.productID','=','orders.productID')
                 ->groupBy('orders.productID')
                 ->where('orders.orderNumber','=',$orderNumber)
                 ->get();

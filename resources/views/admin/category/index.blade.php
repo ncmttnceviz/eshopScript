@@ -25,15 +25,7 @@
                         <tbody>
                         @foreach($data as $kay => $value)
                         <tr>
-                            @if($value['type']==1)
-                                @php
-                                   $maincategory = \App\Models\Categories::select('name')->where('id','=',$value['mainCategoryID'])->get();
-                                   $name = $maincategory[0]['name'];
-                                @endphp
-                                <td>{{$name}} - {{$value['name']}}</td>
-                            @else
                             <td>{{$value['name']}}</td>
-                            @endif
                             <td>{{$value['hit']}}</td>
                             <td><a href="{{route('admin.category.edit',['id'=>$value['id']])}}"><button type="button" class="btn btn-warning">{{__('Edit')}}</button></a></td>
                             <td><a href="{{route('admin.category.delete',['id'=>$value['id']])}}"><button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i> {{__('Delete')}}</button></a></td>

@@ -146,13 +146,13 @@
 
                 <label for="">{{__('paymentApi')}}</label>
                 <div class="input-group">
-                    <input class="form-control" type="text" name="paymentApi" value="">
+                    <input class="form-control" type="text" name="paymentApi" value="{{$data[0]['paymentApi']}}">
                 </div>
                 <br>
 
                 <label for="">{{__('paymentSecretKey')}}</label>
                 <div class="input-group">
-                    <input class="form-control" type="text" name="paymentSecretKey" value="">
+                    <input class="form-control" type="text" name="paymentSecretKey" value="{{$data[0]['paymentSecretKey']}}">
                 </div>
                 <br>
 
@@ -179,19 +179,19 @@
 
                 <label for="">{{__('Mail Address')}}</label>
                 <div class="input-group">
-                    <input class="form-control" type="text" name="mailAddress" value="">
+                    <input class="form-control" type="text" name="mailAddress" value="{{$data[0]['mailAddress']}}">
                 </div>
                 <br>
 
                 <label for="">{{__('Mail Host')}}</label>
                 <div class="input-group">
-                    <input class="form-control" type="text" name="mailHost" value="">
+                    <input class="form-control" type="text" name="mailHost" value="{{$data[0]['mailHost']}}">
                 </div>
                 <br>
 
                 <label for="">{{__('Smtp Port')}}</label>
                 <div class="input-group">
-                    <input class="form-control" type="text" name="mailSmtpPort" value="">
+                    <input class="form-control" type="text" name="mailSmtpPort" value="{{$data[0]['mailSmtpPort']}}">
                 </div>
                 <br>
 
@@ -206,13 +206,13 @@
 
                 <label for="">{{__('Username')}}</label>
                 <div class="input-group">
-                    <input class="form-control" type="text" name="mailUser" value="">
+                    <input class="form-control" type="text" name="mailUser" value="{{$data[0]['mailUser']}}">
                 </div>
                 <br>
 
                 <label for="">{{__('Password')}}</label>
                 <div class="input-group">
-                    <input class="form-control" type="text" name="mailPassword" value="">
+                    <input class="form-control" type="text" name="mailPassword" value="{{$data[0]['mailPassword']}}">
                 </div>
                 <br>
                 <input type="hidden" value="mail" name="config">

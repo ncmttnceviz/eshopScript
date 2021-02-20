@@ -85,7 +85,7 @@
     "Data Created Successfully" : "Veri Başarıyla Oluşturuldu",
     "Data Deleted Successfully" : "Veri Başarıyla Silindi",
     "Data Updated Successfully" : "Veri Başarıyla Güncellendi",
-    "error"                     : "Beklenmedik Bir Hata Oluştu",
+    "error"                     : "An Unexpected Error Has Occurred",
     "Create New Data"           : "Yeni Veri Oluştur",
     "Products" : "Ürünler",
     "products" : "urunler",
@@ -149,7 +149,6 @@
     "Cart Updated" : "Sepet Güncellendi",
     "Cart Cleared" : "Sepet Temizlendi",
     "Items" : "Ürün",
-    "Cart" : "Sepetim",
     "cart" : "sepetim",
     "PRODUCT" : "ÜRÜN",
     "UNIT PRICE" : "BİRİM FİYAT",
@@ -253,5 +252,6 @@
     "Add" : "Ekle",
     "COUNTRY" : "ÜLKE",
     "ZIP CODE" : "POSTA KODU",
-    "This data is already registered" : "Bu Veri Zaten Kayıtlı"
+    "This data is already registered" : "This data is already registered",
+    "Cart" : "Sepetim"
 }
