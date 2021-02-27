@@ -4,7 +4,7 @@
 -.env dosyasını açıp mysql bağlantı bilgilerinizi girin<br>
 - Consol üzerinden çalışma dizininize gelin, composer install komutunu yazıp vendor dosyalarının oluşmasını bekleyin (composer yüklü olması gerek) <br>
 - Kurulum bittikten sonra php artisan key:generate komutunu çalıştırın <br>
-- -php artisan serve komutu ile siteyi yayinlayin
+- -php artisan serve komutu ile siteyi yayinlayin<br>
 - Siteyi artık kullanabilirsiniz <br>
 - Default admin giriş bilgileri  <br>
  email : admin@admin.com <br>
