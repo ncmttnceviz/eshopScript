@@ -1,5 +1,5 @@
 <p align ="center">Kurulum</p>
-- Videolu kurulum anlatimi icin  <a href="https://www.youtube.com/watch?v=o_xtKpCPXak">burayi tiklayin </a> <br>
+
 - İndirdiğiniz dosyayı çalışma dizininize çıkartın <br>
 - phpmyAdmin üzerinden veri tabanı oluşturup eshop.sql dosyasını içe aktarın<br>
 -.env dosyasını açıp mysql bağlantı bilgilerinizi girin<br>
