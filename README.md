@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <p align ="center">Kurulum</p>
 
 - İndirdiğiniz dosyayı çalışma dizininize çıkartın <br>
@@ -12,6 +13,8 @@
  password : rootadmin <br>
 
 
+=======
+>>>>>>> Stashed changes
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -74,7 +77,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<<<<<<< Updated upstream
 
 <p align="center">Bilgilendirme</p>
 Site tasarımı için <a href="https://wpthemesgrid.com/downloads/eshop-ecommerce-html5-template/">eShop template free version</a> kullanılmıştır
 Admin tasarımı için <a href="https://www.themeineed.com/downloads/klorofil-free-bootstrap-admin-template/">Klorofil admin template free version</a> kullanılmıştır
+=======
+>>>>>>> Stashed changes

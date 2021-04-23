@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\App;
 
 class SiteConfig extends Model
 {
@@ -13,8 +14,11 @@ class SiteConfig extends Model
 
     static function getConfig($config)
     {
-       $query = SiteConfig::where('id','=',1)->get();
-
-        return $query[0][$config];
+        if (! App::runningInConsole()) {
+            $query = SiteConfig::where('id','=',1)->get();
+            if($query){
+                return $query[0][$config];
+            }
+        }
     }
 }
