@@ -18,6 +18,7 @@ class CreateBasketsTable extends Migration
             $table->integer('userID')->nullable();
             $table->integer('productID');
             $table->integer('numberOfProducts');
+            $table->integer('addressID');
             $table->string('token')->nullable();
             $table->timestamps();
         });

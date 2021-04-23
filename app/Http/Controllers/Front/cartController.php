@@ -177,7 +177,7 @@ class cartController extends Controller
 
 
 
-        if (Auth::user()->telephoneNumber == "" or Auth::user()->identityNumber == "")
+        if (Auth::user()->telephoneNumber == "")
         {
             return redirect()->route('front.account')->with(['status'=>"alert alert-danger",'message'=>'Fill Your Missing Information']);
         }

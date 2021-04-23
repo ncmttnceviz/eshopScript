@@ -18,9 +18,9 @@ class CreatecategoriesTable extends Migration
             $table->integer('type');
             $table->integer('mainCategoryID');
             $table->string('name');
-            $table->string('title');
-            $table->string('description')->nullable();
-            $table->string('keywords')->nullable();
+            $table->string('metaTitle');
+            $table->string('metaDescription')->nullable();
+            $table->string('metaKeywords')->nullable();
             $table->string('permalink');
             $table->integer('status')->default(0);
             $table->integer('hit')->default(0);

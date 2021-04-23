@@ -15,7 +15,6 @@ class BannersSeeder extends Seeder
     public function run()
     {
         DB::table('banners')->insert([
-            'id' => 1,
             'mainBanner' => 'images/mainBanner.jpg',
             'mainBannerTitle' => 'Title',
             'mainBannerText' => 'Text',

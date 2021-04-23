@@ -17,9 +17,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->integer('categoryID');
             $table->string('name');
-            $table->string('title');
-            $table->string('description')->nullable();
-            $table->string('keywords')->nullable();
+            $table->string('metaTitle');
+            $table->string('metaDescription')->nullable();
+            $table->string('metaKeywords')->nullable();
             $table->string('permalink');
             $table->double('price');
             $table->integer('stock');
@@ -27,6 +27,7 @@ class CreateProductsTable extends Migration
             $table->integer('amountPurchased');
             $table->integer('publish');
             $table->integer('status');
+            $table->integer('hit');
             $table->timestamps();
         });
     }

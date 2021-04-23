@@ -65,7 +65,7 @@ class PaymentController extends Controller
         $buyer->setSurname($this->userData->surname);
         $buyer->setGsmNumber($this->userData->telephoneNumber);
         $buyer->setEmail($this->userData->email);
-        $buyer->setIdentityNumber($this->userData->identityNumber);
+        $buyer->setIdentityNumber("74300864791");
         $buyer->setRegistrationAddress($this->address->addressDescription);
         $buyer->setIp($this->userData->IP);
         $buyer->setCity($this->address->province);
@@ -119,10 +119,11 @@ class PaymentController extends Controller
         }
         $request->setBasketItems($basketItems);
 
-                $checkoutFormInitialize = CheckoutFormInitialize::create($request,$this->options);
-                $paymentinput = $checkoutFormInitialize->getCheckoutFormContent();
+                $checkoutFormInitialize = CheckoutFormInitialize::create($request, $this->options);
 
+                $paymentinput = $checkoutFormInitialize->getCheckoutFormContent();
                 return view('front.payment',compact('paymentinput'));
+
     }
 
     public function callbackPayment()
