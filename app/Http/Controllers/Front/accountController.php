@@ -19,8 +19,6 @@ class accountController extends Controller
 
     public function index()
     {
-
-
         $data = Address::where('userID','=',Auth::id())->get();
         $userData = User::where('id','=',Auth::id())->get();
         return view('front.account',['data'=>$data,'userData'=>$userData]);
@@ -33,7 +31,6 @@ class accountController extends Controller
 
     public function editUser(Request $request)
     {
-
         $all = $request->except('_token');
         $update = User::where('id','=',Auth::id())->update($all);
         if ($update)

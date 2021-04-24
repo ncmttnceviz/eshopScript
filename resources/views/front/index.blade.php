@@ -176,12 +176,12 @@
                         @foreach($hot as $key => $value)
                         <div class="single-product">
                             <div class="product-img">
-                                <a href="{{$value->permalink}}">
+                                <a href="{{route('front.product',['permalink'=>$value->permalink])}}">
                                     <img class="default-img" src="{{asset($value->path)}}" alt="#">
                                 </a>
                             </div>
                             <div class="product-content">
-                                <h3><a href="{{$value->permalink}}">{{$value->permalink}}</a></h3>
+                                <h3><a href="{{route('front.product',['permalink'=>$value->permalink])}}">{{$value->name}}</a></h3>
                                 <div class="product-price">
                                     <span>{{$value->price}}</span>
                                 </div>
@@ -247,7 +247,7 @@
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 no-padding">
                                 <div class="content">
-                                    <h5 class="title"><a href="#">{{$value->name}}</a></h5>
+                                    <h5 class="title"><a href="{{route('front.product',['permalink'=>$value->permalink])}}">{{$value->name}}</a></h5>
                                     <p class="price with-discount">{{$value->price}}</p>
                                 </div>
                             </div>
@@ -270,12 +270,12 @@
                             <div class="col-lg-6 col-md-6 col-12">
                                 <div class="list-image overlay">
                                     <img src="{{asset($value->path)}}" alt="#">
-                                    <a href="#" class="buy"><i class="fa fa-shopping-bag"></i></a>
+                                    <a href="{{route('front.product',['permalink'=>$value->permalink])}}" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-12 no-padding">
                                 <div class="content">
-                                    <h5 class="title"><a href="#">{{$value->name}}</a></h5>
+                                    <h5 class="title"><a href="{{route('front.product',['permalink'=>$value->permalink])}}">{{$value->name}}</a></h5>
                                     <p class="price with-discount">{{$value->price}}</p>
                                 </div>
                             </div>

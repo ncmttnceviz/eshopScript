@@ -26,7 +26,6 @@ class PaymentController extends Controller
     public $address;
     public $data;
 
-
     public function __construct($orderData=null,$addressData=null)
     {
         $this->options = new Options();
@@ -46,8 +45,6 @@ class PaymentController extends Controller
 
     public function index()
     {
-
-
         $request = new CreateCheckoutFormInitializeRequest();
         $request->setLocale(Locale::TR);
         $request->setConversationId("1234567890987654321");
@@ -128,7 +125,6 @@ class PaymentController extends Controller
 
     public function callbackPayment()
     {
-
         $request = new \Iyzipay\Request\RetrieveCheckoutFormRequest();
         $request->setLocale(\Iyzipay\Model\Locale::TR);
         $request->setToken($_POST['token']);
@@ -145,5 +141,4 @@ class PaymentController extends Controller
                 return  redirect()->route('front.basket')->with(['status' => 'alert alert-danger', 'message' => 'error']);
             }
         }
-
 }

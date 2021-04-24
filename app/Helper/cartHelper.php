@@ -29,8 +29,6 @@ class cartHelper
             $count = Basket::Where('token','=',session('basket'))
                 ->count();
         }
-
-
         return $count;
     }
 

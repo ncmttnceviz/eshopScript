@@ -19,16 +19,14 @@ use Illuminate\Support\Facades\Session;
 class cartController extends Controller
 {
 
-
-     public  function setToken(){
-
-        if (Session::get('basket') == null and Session::get('basket')==0)
+     public  function setToken()
+     {
+        if (session('basket') == null)
         {
-            $token = rand(111111111111,999999999999);
+            $token = md5(uniqid(rand(), true));
             Session::get('basket');
             Session::put('basket',$token);
         }
-
         return session('basket');
      }
 
@@ -54,7 +52,6 @@ class cartController extends Controller
                     'numberOfProducts' => $total,
                     'token' => $this->setToken()
                 ]);
-
                 if ($insert)
                 {
                     return notificationHelper::sendNotification('success','addcart');
@@ -175,13 +172,10 @@ class cartController extends Controller
             return redirect()->route('front.account.addAddress');
         }
 
-
-
         if (Auth::user()->telephoneNumber == "")
         {
             return redirect()->route('front.account')->with(['status'=>"alert alert-danger",'message'=>'Fill Your Missing Information']);
         }
-
 
         $cartcontrol = Basket::where('userID','=',Auth::id())
             ->orwhere('token','=',$this->setToken())
@@ -222,12 +216,11 @@ class cartController extends Controller
                     'addressID' => $address
                 ]);
 
-
             $products = Basket::where('userID', '=', Auth::id())->get();
 
           foreach ($products as $key => $value) {
                 $numberOfProductsOrdered = Basket::select('numberOfProducts', 'productID')->where('productID', '=', $value->productID)->get();
-                $stock = Product::select('id', 'stock', 'permalink',)->where('id', '=', $value->productID)->get();
+                $stock = Product::select('id', 'stock', 'permalink')->where('id', '=', $value->productID)->get();
 
                 if ($numberOfProductsOrdered[0]->numberOfProducts > $stock[0]->stock) {
                     $deleteItemInCart = Basket::where('productID', '=', $numberOfProductsOrdered[0]->productID)

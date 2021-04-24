@@ -75,8 +75,6 @@ class indexController extends Controller
         {
             return notificationHelper::sendNotification('error','nodata');
         }
-
-
     }
 
     public function update(editProductRequest $request)

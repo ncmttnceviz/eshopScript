@@ -31,7 +31,6 @@ class categoryController extends Controller
                     ->where('publish','=',1)
                     ->get();
 
-
             }
             else
                 {
@@ -46,9 +45,5 @@ class categoryController extends Controller
         {
             return abort(404);
         }
-
-
     }
-
-
 }

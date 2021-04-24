@@ -26,7 +26,6 @@ class indexController extends Controller
         $config = $request["config"];
         $all = $request->except('_token','config');
         $control = SiteConfig::where('id','=',1)->count();
-
         if ($config == "general")
         {
             $appname = funcHelper::encodeAppName($all['siteName']);
@@ -41,7 +40,6 @@ class indexController extends Controller
                 return notificationHelper::sendNotification('error');
             }
         }
-
         elseif ($config == "mail")
         {
             funcHelper::setEnv("MAIL_HOST",$all['mailHost']);

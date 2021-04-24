@@ -26,5 +26,4 @@ class productController extends Controller
 
        return view('front.product',['data'=>$product]);
     }
-
 }

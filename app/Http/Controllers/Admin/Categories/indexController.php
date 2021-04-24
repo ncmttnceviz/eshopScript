@@ -31,7 +31,6 @@ class indexController extends Controller
         $type = $all['type'];
         $control = Categories::where('permalink','=',$all['permalink'])->count();
 
-
         if ($type == 0 and $control == 0)
         {
                 $insert = Categories::create($all);

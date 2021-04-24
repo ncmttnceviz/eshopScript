@@ -16,7 +16,6 @@ class indexController extends Controller
     {
         $categories = Categories::select('name','permalink')->get();
         $products   = Product::select('name','permalink')->get();
-
         return view('admin.banner.index',['categories'=>$categories,'products'=>$products]);
     }
 
@@ -40,8 +39,6 @@ class indexController extends Controller
         {
             $uploadimage = imageUpload::bannerUpload($banner,$image);
         }
-
-
 
         $update = Banner::where('id','=',1)
         ->update([
