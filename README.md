@@ -1,11 +1,12 @@
-<<<<<<< Updated upstream
 <p align ="center">Kurulum</p>
 
 - İndirdiğiniz dosyayı çalışma dizininize çıkartın <br>
-- phpmyAdmin üzerinden veri tabanı oluşturup eshop.sql dosyasını içe aktarın<br>
 -.env dosyasını açıp mysql bağlantı bilgilerinizi girin<br>
 - Consol üzerinden çalışma dizininize gelin, composer install komutunu yazıp vendor dosyalarının oluşmasını bekleyin (composer yüklü olması gerek) <br>
-- Kurulum bittikten sonra php artisan key:generate komutunu çalıştırın <br>
+- Vendor dosyaları olustuktan sonra sırayla asagıdaki komutları çalıstırın <br>
+- php artisan migrate <br>
+-  php artisan db:seed <br>
+-  php artisan key:generate <br>
 - -php artisan serve komutu ile siteyi yayinlayin<br>
 - Siteyi artık kullanabilirsiniz <br>
 - Default admin giriş bilgileri  <br>
